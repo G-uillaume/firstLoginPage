@@ -17,6 +17,8 @@
         </div>
     </div>
     <button id="logout">
-        <a href="includes/logout.php">Log Out</a>
+        <a href="logout.php">Log Out</a>
     </button>
-    <div>
+<div>
+
+<script src="scriptProfile.js"></script>

@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Plasma Drip";
+    src: url("fonts/regular/plasdrip-webfont.eot");
+    src: url("fonts/regular/plasdrip-webfont.eot?iefix") format("eot"),
+         url("fonts/regular/plasdrip-webfont.woff") format("woff"),
+         url("fonts/regular/plasdrip-webfont.ttf") format("truetype"),
+         url("fonts/regular/plasdrip-webfont.svg#plasdrip-webfont") format("svg");  
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -83,10 +92,24 @@ button {
     border: none;
     border-radius: 10px;
     margin: 0 auto 30px auto;
+    cursor: pointer;
+    width: 130px;
+}
+button:disabled {
+    cursor: not-allowed;
+}
+#submit {
+    background-color: rgb(184, 191, 226);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto 30px auto;
+    cursor: pointer;
+    width: 130px;
 }
 
-#submit {
-    width: 30%;
+#submit:focus {
+    border: 2px solid black;
 }
 
 #profile {
@@ -125,17 +148,20 @@ img {
 }
 
 #chuck {
-    width: 50%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: flex-start;
     align-items: baseline;
+    flex-wrap: wrap;
 }
 
 #paraChuck {
     font-size: 20px;
+    margin-right: 10px;
+    font-weight: 700;
 }
 
 #logout {
-    width: 6%;
+    /* width: 6%; */
     padding: 12px 6px;
 }
 
@@ -146,13 +172,24 @@ img {
 
 footer {
     background-color: #eee;
-    /* position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0; */
     height: 20%;
 }
 
 footer p {
     color: #333;
+}
+
+#alert {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: black;
+    color: red;
+    font-size: 32px;
+    font-family: "Plasma Drip", Arial, sans-serif;
 }

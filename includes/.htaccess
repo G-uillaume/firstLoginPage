@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/Users/guillaumevanleynseele/.bitnami/stackman/machines/xampp/volumes/root/htdocs/firstLoginPage/includes/.htpasswd"
+Require valid-user

@@ -15,6 +15,7 @@
         <input type="password" name="password" id="password" class="input" placeholder="...">
         
     </p>
-    <button type="submit" name="submit" id="submit" disabled>Valider</button>
+    <!-- <button type="submit" name="submit" id="submit" disabled>Valider</button> -->
+    <input type="submit" namue="submit" id="submit" value="Enter" disabled>
 </form>
 <script src="script.js"></script>
