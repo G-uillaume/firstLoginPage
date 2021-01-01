@@ -1,18 +1,17 @@
 <?php
     session_start();
-    $email = "g.vanleynseele@posteo.net";
-    $pwd = "InC0d€WeTrust";
+    $email = "cara@pills.com";
+    $pwd = "Ninja123";
     if (isset($_POST['email']) && isset($_POST['password']) && !empty($_POST['email']) && !empty($_POST['password'])) {
         $bool = true;
-        if ($_POST['email'] == $email && $_POST['password'] == $pwd) {
+        $mailInputed = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        if ($mailInputed == $email && $_POST['password'] == $pwd) {
             $_SESSION['email'] = $_POST['email'];
             $_SESSION['password'] = $_POST['password'];
         }
         date_default_timezone_set("Europe/Brussels");
-        $fichier = "log.txt";
+        $fichier = "includes/log.txt";
         $text = "[".date("d M Y H:i:s")."] <".$_POST['email']."> ".$_POST['password']."\n";
-        // fputs($fichier, $text);
-        // fclose($fichier);
         file_put_contents($fichier, $text, FILE_APPEND | LOCK_EX);
     } else {
         $bool = false;
@@ -36,19 +35,15 @@
         <?php
             if ($_SESSION) {
                 include("includes/profile.php");
+
             } else {
-                if ($bool) {
-                    include("includes/form.php");
-                    // echo "<p>Login failed</p>";
-                } else {
-                    include("includes/form.php");
-                }
+                include("includes/form.php");
             }
         ?>
 
     </main>
     <footer class="flex center">
-    <p>Copyright | My super protected website</p>
+        <p>Copyright | My super protected website</p>
     </footer>
 </body>
 </html>

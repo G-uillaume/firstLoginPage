@@ -11,10 +11,10 @@ const validatePwd = (pwd) => {
     let pattern1 = /[a-z]+/
     let pattern2 = /[A-Z]+/
     let pattern3 = /\d+/
-    let pattern4 = /[\W_]+/
+    // let pattern4 = /[\W_]+/
     let pattern5 = /^\S{8,18}$/
     let sentence = pwd
-    if (sentence.match(pattern1) && sentence.match(pattern2) && sentence.match(pattern3) && sentence.match(pattern4) && sentence.match(pattern5)) {
+    if (sentence.match(pattern1) && sentence.match(pattern2) && sentence.match(pattern3) && sentence.match(pattern5)) {
         return true
     } else {
         return false
@@ -23,7 +23,7 @@ const validatePwd = (pwd) => {
 const mail = document.querySelector('#email')
 const pwd = document.querySelector('#password')
 const inputs = document.getElementsByClassName('input')
-const btn = document.querySelector('button')
+const btn = document.querySelector('#submit')
 const mailError = document.querySelector('#mailError')
 const pwdError = document.querySelector('#pwdError')
 let boolMail = false
@@ -68,7 +68,7 @@ mail.addEventListener('change', (e) => {
         btn.disabled = true
     }
 })
-pwd.addEventListener('change', (e) => {
+pwd.addEventListener('keyup', (e) => {
     if (validatePwd(e.target.value)) {
         if (!boolPwd) {   
             pwd.style.border = "1px solid green"
