@@ -16,6 +16,10 @@
         
     </p>
     <!-- <button type="submit" name="submit" id="submit" disabled>Valider</button> -->
-    <input type="submit" namue="submit" id="submit" value="Enter" disabled>
+    <div class="flex">
+    <!-- <input type="submit" namue="submit" id="submit" value="Enter" disabled> -->
+    <button type="submit" name="submit" id="submit" disabled>Enter</button>
+    <button><a href="inscription.php">Sign in</a></button>
+    </div>
 </form>
 <script src="script.js"></script>

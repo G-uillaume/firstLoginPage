@@ -2,8 +2,6 @@ const validateEmail = (email) => {
     let pattern = /^[\w-]+(\.?[\w-]+)?@\w+\.[a-z]+$/i
     if (email.match(pattern)) {
         return true
-    } else {
-        return false
     }
 }
 
@@ -16,8 +14,6 @@ const validatePwd = (pwd) => {
     let sentence = pwd
     if (sentence.match(pattern1) && sentence.match(pattern2) && sentence.match(pattern3) && sentence.match(pattern5)) {
         return true
-    } else {
-        return false
     }
 }
 const mail = document.querySelector('#email')
